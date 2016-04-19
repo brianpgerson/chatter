@@ -11,10 +11,6 @@ RSpec.describe Message, :type => :model do
     end
   end
 
-  describe "Message" do
-    it { should validate_presence_of(:body) }
-  end
-
   context "when body is too too long" do
     it "should require that password.length < 141" do
       expect(too_long).not_to be_valid

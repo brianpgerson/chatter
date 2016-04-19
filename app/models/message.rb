@@ -1,5 +1,5 @@
 class Message < ActiveRecord::Base
-  validates_presence_of :body
+  validates :body, presence: true, length: { maximum: 141 }
 
   has_many :taggings
 
