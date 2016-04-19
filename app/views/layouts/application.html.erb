@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatter</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <h1>Zozi Messages</h1>
+    <%= form_for Message.new, url: "api/messages", html: {class: "new-message"} do |f| %>
+      <%= f.text_area :body, maxlength: 141, required: true, placeholder: "Enter a message < 141 characters" %>
+      <br>
+      <%= f.submit "Create" %>
+    <% end %>
+
+  </header>
+<%= yield %>
+
+</body>
+</html>

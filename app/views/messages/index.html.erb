@@ -1,0 +1,25 @@
+<div class="wrapper">
+
+  <section class="messages-section">
+    <h3>Recent Messages</h3>
+    <ul class="messages">
+      <% if @messages.empty? %>
+        <li>No messages yet...add one!</li>
+      <% else %>
+        <% @messages.each do |message| %>
+          <li><%= message.body %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="hashtags-section">
+    <h3>Hashtags</h3>
+    <ul class="hashtags">
+      <% @hashtags.each do |hashtag| %>
+        <li><%= link_to hashtag.hashtag, hashtag %> - <%= hashtag.count %> <%= hashtag.count > 1 ? "occurances" : "occurance" %></li>
+      <% end %>
+    </ul>
+  </section>
+
+</div>

@@ -1,0 +1,12 @@
+<div class="hash-messages">
+
+  <h2>Messages for <%= @hashtag.hashtag %></h2>
+
+  <ul>
+    <% @messages.each do |msg| %>
+    <li><%= msg.body %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Back to Messages", messages_url %>
+</div>
